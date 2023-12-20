@@ -7,7 +7,7 @@
 - It was introduced in 2011. It also provides the backward compatibility as Aarch32
 
 
-**Qualcomm X Elite**  `( This is a core) ` : This one is based on ARMv8.0 Cortex-ASeries
+**Qualcomm X Elite**  `( This is a core) ` : This one is based on ARMv8.0 Cortex-A Series
  
 Both for Desktop and Data Center
 
