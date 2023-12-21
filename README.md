@@ -46,10 +46,10 @@ Used in Azure
 ## Aarch64
 **Programmers Model**
 
-- Exception Model ( IRQ, FIQ)
-- Memory Model
-- Debug Model
-- ISA
+- 💉 Exception Model ( IRQ, FIQ)
+- 💉 Memory Model
+- 💉 Debug Model
+- 💉 ISA
 
 **Peripherals are also important** 
 - MMU, GIC, Timers, Caches, Synchronization, Interconnect ( Coherent{AXI,ACE} & Non-coherent )
@@ -72,3 +72,31 @@ Used in Azure
   - Qualcomm X Elite
   - Apple M1        ✅ These are micro-architecture
 
+- Here in Chapter 3, they define what they are, but not why they are
+
+### Exception Model 🔱
+- 💊 Exception Level : EL0, EL1, EL2, EL3
+- 💊 Exception States : S, NS
+- 💊 Execution Mode : 64 bits (Aarch64), 32 bits( Aarch32)
+
+All these are controlled by registers. Some special instruction which works on Special Registers to govern the flow. These all defined the processor state. 
+
+Due to hypervisor, we have IPA( Intermediate PA)
+
+***[CPU]*** `---- VA---->` ***[HYP]*** `----IPA--->` ***[MMU]*** `---- PA--->`
+
+🔍 We enforce the out-of-order execution behavior based on barrier { `for critical sections` }
+
+**Bus Protocol & Cache Coherent Interconnect**
+- ACE, AXI
+
+💡 There are 2 types of cluster
+- Homo-geneious cluster
+- Hetero-geneious cluster { Based on big.Little Technology }
+
+🖌 Debug
+- Pause the CPU
+- go and check the different registers and memory
+
+📝 Fast Model
+- Software Block Model { It includes ETM, CTI }
