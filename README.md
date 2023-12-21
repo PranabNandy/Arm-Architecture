@@ -34,8 +34,41 @@ Used in Azure
 - **S (`trustzone`) & NS limit your hardware access**
 - You can't even take the Screenshot of Amazon Prime or Netflix video as there are present in Secure Memory area
 - We keep sensitive data in S EL0 as chip manufactor does not know how many such data like ( fringer print sensor ) will be there. So EL3 has limited memory with limited feature.
+- EL3 -- `vendor-specific` code
+- EL1/ EL0 - `OEM specific` code -- Not high features -- only secure apps
   
 ![Screenshot from 2023-12-20 08-41-36](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/8a4bcafc-4419-45f1-a3f5-f6264c8ab68c)
 
 
 ![Screenshot from 2023-12-19 23-10-20](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/47158bac-0917-429d-ae89-913177450b67)
+
+
+## Aarch64
+**Programmers Model**
+
+- Exception Model ( IRQ, FIQ)
+- Memory Model
+- Debug Model
+- ISA
+
+**Peripherals are also important** 
+- MMU, GIC, Timers, Caches, Synchronization, Interconnect ( Coherent{AXI,ACE} & Non-coherent )
+
+**3 Important Documents of ARM**
+
+- ARM Cortex A Reference Manual { It explains about `Architecture`}
+- ARM A-55( A-78) TRM { It explains about `micro architecture` i.e. how the core should behave }
+- ARM A-Series PG ( Programmers Guide) { It contains how to write code as a Programmer }
+
+
+![Screenshot from 2023-12-21 06-27-24](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/d3926d78-f2e3-4022-bdbf-f9605feaa62d)
+
+### Programmers Guide 😃
+
+- For the SW doc
+- Most of the part is generic
+- ARM allows OEM to have their own instructions
+  - Need to change to compilers to support new instructions
+  - Qualcomm X Elite
+  - Apple M1        ✅ These are micro-architecture
+
