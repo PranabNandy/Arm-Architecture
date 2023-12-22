@@ -72,7 +72,32 @@ HW |        💻💻💻  |
   - debug /trace instruction
 - 🦠 JTAG : SWD ( Serial wire debugger in ARM)
 - 🦋 MPU : Divide the memory into multiple priviledges
+- 🏋️‍♀️ Systick : It is nothing but 24 bit Down Counter. RTOS needs timer based on that.
+- **Enidans :** How we place LSB & MSB in Memory.
+  ![Screenshot from 2023-12-22 20-51-22](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/76203d2d-bda5-4eeb-ae9f-0521591381b2)
+
 ![Screenshot from 2023-12-21 08-06-11](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/6c1836f8-e13a-4606-b409-5b9f77556ac2)
 
+🏌️‍♂️ Cortex M should dominate MCU 8/ 16 bit
+- To deal with **Thumb Instruction** ( `64 bit Core-->32 bit` Inst is Thumb, `32 bits---> 16/8 bit` inst is Thumb)
+- Here we have to optimize the code density for the thumb instruction
+- Even though it is not powerful as
+  - no of instructions are limited
+  - no of registers are  limited
+    
+![Screenshot from 2023-12-22 20-50-26](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/41459623-7073-45ce-ae17-dfda77cdaf3c)
 
+ 
+🌸 **Thumb2 Instr** = Thumb Inst + ARM Instr
   
+🌼 **M4** = dual IF stage == `(32 bits Instr --> 16 + 16 bits)`
+
+Mode | 🍔 | 
+--- | --- | 
+Thread Mode | It is more restricted ( PSP - Process SP ) | 
+Handler Mode | High Priority ( MSP - Main SP ) | 
+
+**There is a Zero Register** which compare bit value of every registers.
+![Screenshot from 2023-12-22 20-52-32](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/c2541377-2ae9-4704-aa1e-440639485d89)
+![Screenshot from 2023-12-22 20-52-52](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/f5b2f400-00b2-4edc-a343-d05106fcdabd)
+
