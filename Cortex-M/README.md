@@ -73,11 +73,11 @@ HW |        💻💻💻  |
 - 🦠 JTAG : SWD ( Serial wire debugger in ARM)
 - 🦋 MPU : Divide the memory into multiple priviledges
 - 🏋️‍♀️ Systick : It is nothing but 24 bit Down Counter. RTOS needs timer based on that.
-- **Enidans :** How we place LSB & MSB in Memory.
-  ![Screenshot from 2023-12-22 20-51-22](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/76203d2d-bda5-4eeb-ae9f-0521591381b2)
+- **Enidans :** How we place LSB & MSB in Memory. ( Mostly we use little Endian)
+
 
 ![Screenshot from 2023-12-21 08-06-11](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/6c1836f8-e13a-4606-b409-5b9f77556ac2)
-
+![Screenshot from 2023-12-22 20-51-22](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/76203d2d-bda5-4eeb-ae9f-0521591381b2)
 🏌️‍♂️ Cortex M should dominate MCU 8/ 16 bit
 - To deal with **Thumb Instruction** ( `64 bit Core-->32 bit` Inst is Thumb, `32 bits---> 16/8 bit` inst is Thumb)
 - Here we have to optimize the code density for the thumb instruction
