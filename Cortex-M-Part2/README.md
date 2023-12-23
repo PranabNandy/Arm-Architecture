@@ -36,7 +36,17 @@ Handler Mode | High Priority ( MSP - Main SP ) |
 - We can set breakpoint into reset vector --> to check the status register of ARM
 - VTOR will be set to some address by Designer/ BootRom writers
 - As soon as, cpu is power up. 2 words will be fetched.
-- 
+
 ![Screenshot from 2023-12-22 22-37-12](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/4c7df70a-67a9-4586-b772-78726ad5cb0e)
 
 ![Screenshot from 2023-12-22 22-37-29](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/3315dab4-3fef-4e2e-8b0a-721ecf687cae)
+
+#### How CPU knows what to access?
+- 32 bits CPU
+- You can use 2^(32) combinations
+- 4 GB of combinations out of 32 signals
+- **CPU Designer**
+- Whenever they want to have certain signals will be manipulated by users
+- They provide interface called Registers
+- 
+
