@@ -1,3 +1,8 @@
+# 🛸 Linux Creation
+- **1980** : GNU project(free) with all OS components except kernel
+- **1990** : Linux Kernel + GNU Project = Complete OS
+
+
 # 🚦 Exception Level
 
 - Usage Fault may happen during Execution by Cortex M4
@@ -151,6 +156,45 @@ void foo(void){
 // some code
 } > ram AT >flash
 ```
-- Initially, `.data` variables are available in **flash**
-- Later in the code, when we modify it, it will copy all `.data` to **ram** & modify their value
+- 🧤 Initially, `.data` variables are available in **flash**
+- 🔔 Later in the code, when we modify it, it will copy all `.data` to **ram** & modify their value
+
+# 🇨🇦 🇦🇺 🇨🇳 🇮🇳 🇯🇵
+
+### Reset to Main() 🎖🎖
+- M-class cpu expects SP
+- VTOR address is set by BootRom Program
+- By SW means Intr & Code
+#### What reset handler really do ? 🥊
+- There are multiple section in the device that needs to be respected
+- `.text, .data, .bss`
+- `.data` has some critical value that needs to be stored during power cycle. Because it initialized value of some variables
+- 1. Copy data from flash of .data section to ram .data section
+  2. initialize .bss section to 0.
+  3. By default value of uniniliazed variable do not have value 0, depends on the SRAM configuration  
+
+### for example app.c running on Linux 🪖
+- Loader has its own start up code which does exactly the same
+- Very minimal initialization
+- Then controller hand over the main()
+
+### Renode 🎓
+- Emulation platform
+
+### **.vector** is the first section 🧢
+- It is the first section in the flash also
+- So `VTOR` will point to the first address of the flash nothing but `.vector` section
+- Here in `.vector` section the first thing present in the **Vector Table**
+- ```
+  void (*const vectors[])(void)=
+  {
+      &_stack_top,
+      reset_handler
+  }
+  ```
+- **There cpu will fetch first 2 Words** 📯
+- from `reset handler`, you will call the first function` may not be main()` 💎
+
+![Screenshot from 2023-12-24 20-32-55](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/83b6b451-eb79-4316-8eaa-207aca9b1128)
+
 
