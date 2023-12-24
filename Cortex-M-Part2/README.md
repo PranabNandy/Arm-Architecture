@@ -99,3 +99,58 @@ Handler Mode | High Priority ( MSP - Main SP ) |
 
 
 # 🇨🇦 🇦🇺 🇨🇳 🇮🇳 🇯🇵
+
+### GCC 🐶
+- It has its own **assembler (as)**, **linker (ld)** 
+- It internally usage these tools
+- 🕸 In application, main() is the the first function
+- 🕸 In Embedded, first `start up` function calls the `main()` or any other funciton
+- In abstraction, program has `.txt, .bss, .data` section in the memory
+- 🍀 Special Note: **.S** has gone through Preprocessor and **.s** does not go through the preprocessing stage
+- 🍉 **.o :** relocatable object file
+- 🫐 linker : generates elf
+![Screenshot from 2023-12-24 19-08-42](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/f784e51c-8dd4-4b76-a5cd-8da00e09ee6b)
+
+### startup file 🥗
+- sets bss section to 0
+- `.bin `= .txt, .data, `.bss`
+  - `.bss`: start up program only take start addr and size during startup time, we just initialize to 0
+- **`.a`** : collections of .o files
+- **KEEP(*(.vector))** 🫖
+  - retain even if there is no reference to it in the program
+- **logs of linker:** map file 🧊
+  - when there is a crash in the system due to some address
+  - take that address & check in map file which variable it is
+![Screenshot from 2023-12-24 19-13-21](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/a3ae4c6d-0493-4b46-b28e-f5e998ee042f)
+![Screenshot from 2023-12-24 19-09-34](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/4044130b-e422-4c0f-a8dd-3deadeba4601)
+![Screenshot from 2023-12-24 19-11-52](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/338ed803-39ac-4cf1-bf51-2f4653fc2ee7)
+
+### map file 🏥
+- **&_stack_top** : this value is coming from .map file i.e after linking
+- **vector table** : It is a collections of void pointers
+```
+// this is how we can add any function to a particular section
+__attibute(used,.section(.text))
+void foo(void){
+    // some code
+}
+```
+- **flash**: It is byte writeable ⛩
+  - 1 --> 0  easy
+  - 0 --> 1 expensible process
+```
+.bss(NOLOAD)
+{
+// It means don't load it during loading time
+// reset handler will take care of it
+}
+```
+```
+.data
+{
+// some code
+} > ram AT >flash
+```
+- Initially, `.data` variables are available in **flash**
+- Later in the code, when we modify it, it will copy all `.data` to **ram** & modify their value
+
