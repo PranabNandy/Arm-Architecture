@@ -34,8 +34,8 @@ Used in Azure
 - 💠 **S (`trustzone`) & NS limit your hardware access** 🔬 
 - 🟢 You can't even take the Screenshot of Amazon Prime or Netflix video as there are present in Secure Memory area 
 - 🟢 We keep sensitive data in S EL0 as chip manufactor does not know how many such data like ( fringer print sensor ) will be there. So EL3 has limited memory with limited feature.  
-- 🧷 EL3 -- `vendor-specific` code 
-- 🧷 EL1/ EL0 - `OEM specific` code -- Not high features -- only secure apps 
+- 🧷 EL3 -- `vendor-specific` code   // Ex- SAM, QC code
+- 🧷 EL1/ EL0 - `OEM specific` code -- Not high features -- only secure apps  /  // Ex- Harman, Visteon
   
 ![Screenshot from 2023-12-20 08-41-36](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/8a4bcafc-4419-45f1-a3f5-f6264c8ab68c)
 
