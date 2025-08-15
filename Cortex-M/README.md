@@ -97,7 +97,8 @@ Mode | 🍔 |
 Thread Mode | It is more restricted ( PSP - Process SP ) | 
 Handler Mode | High Priority ( MSP - Main SP ) | 
 
-**There is a Zero Register** which compare bit value of every registers.
+## **There is a Zero Register** which compare bit value of every registers.
+
 ![Screenshot from 2023-12-22 20-52-32](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/c2541377-2ae9-4704-aa1e-440639485d89)
 ![Screenshot from 2023-12-22 20-52-52](https://github.com/PranabNandy/Arm-Architecture/assets/34576104/f5b2f400-00b2-4edc-a343-d05106fcdabd)
 
